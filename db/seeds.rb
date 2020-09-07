@@ -13,10 +13,10 @@ Category.create([
 ])
 
 Test.create([
-  { title: 'Java - Основы', level: '0', category_id: '1' },
-  { title: 'Python - Основы', level: '0', category_id: '2' },
+  { title: 'Java - Основы', level: '1', category_id: '1' },
+  { title: 'Python - Основы', level: '1', category_id: '2' },
   { title: 'CSS - Основы', level: '0', category_id: '3' },
-  { title: 'SQL - Основы', level: '0', category_id: '4' }
+  { title: 'SQL - Основы', level: '2', category_id: '4' }
 ])
 
 Question.create([
@@ -93,4 +93,13 @@ Answer.create([
 User.create([
   { name: 'Евгений' },
   { name: 'Сергей' }
+])
+
+UserTest.create([
+  { user_id: 1, test_id: 1 },
+  { user_id: 1, test_id: 2 },
+  { user_id: 1, test_id: 3 },
+  { user_id: 2, test_id: 2 },
+  { user_id: 2, test_id: 3 },
+  { user_id: 2, test_id: 4 }
 ])
