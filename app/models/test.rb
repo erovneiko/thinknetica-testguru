@@ -7,16 +7,16 @@ class Test < ApplicationRecord
   scope :easy, -> { where(level: 0..1) }
   scope :normal, -> { where(level: 2..4) }
   scope :hard, -> { where(level: 5..) }
-  scope :categories_title, -> (category) { 
-    joins(:category)
-   .where('categories.title LIKE ?', category)
-   .order(title: :desc).pluck(:title)
+  scope :by_category, -> (category_title) { 
+    joins(:category).where('categories.title LIKE ?', category_title)
   }
-  scope :by_user_level, -> (user_id, level) {
-    where(level: level).joins(:users).where(:'users.id' => user_id)
-  }
+  scope :level, -> (level) { where(level: level) }
 
   validates :title, presence: true 
   validates :level, numericality: { only_integer: true }
   validates :title, uniqueness: { scope: :level }
+
+  def self.titles_by_category(category_title)
+    by_category(category_title).order(title: :desc).pluck(:title)
+  end
 end
