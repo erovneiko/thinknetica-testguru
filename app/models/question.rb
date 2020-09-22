@@ -4,4 +4,6 @@ class Question < ApplicationRecord
 
   validates :text, presence: true
   validates :answers, length: { in: 1..4 }
+
+  default_scope { order(:id) }
 end

@@ -1,0 +1,8 @@
+<form action="/tests/<%= params[:test_id] %>/questions" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token >">
+  <p>
+    <label for="question-text">Text:</label>
+    <input type="text" name="question[text]" id="question-text">
+  </p>
+  <input type="submit">
+</form>
