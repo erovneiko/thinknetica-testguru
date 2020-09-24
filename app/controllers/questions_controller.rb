@@ -1,5 +1,6 @@
 class QuestionsController < ApplicationController
   before_action :find_test
+  before_action :find_question, only: %i[show destroy]
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_record_not_found
   rescue_from ActiveRecord::RecordInvalid, with: :rescue_with_question_invalid
   rescue_from NoMethodError, with: :rescue_with_question_not_found
@@ -15,15 +16,10 @@ class QuestionsController < ApplicationController
   end
 
   def show
-    question = if !params[:test_id].nil?
-                 @test.questions[params[:id].to_i - 1]
-               else
-                 Question.find(params[:id])
-               end
-    render html: question.text.insert(0, params[:id] + '. ')
-                         .gsub("<pre>", "\n<pre>\n")
-                         .gsub("</pre>", "\n</pre>")
-                         .html_safe
+    render html: @question.text.insert(0, params[:id] + '. ')
+                          .gsub("<pre>", "\n<pre>\n")
+                          .gsub("</pre>", "\n</pre>")
+                          .html_safe
   end
 
   def create
@@ -32,18 +28,28 @@ class QuestionsController < ApplicationController
   end
 
   def destroy
-    if !params[:test_id].nil?
-      @test.questions[params[:id].to_i - 1].destroy
-    else
-      Question.find(params[:id]).destroy
-    end
+    @question.destroy
     render plain: "Вопрос успешно удалён!\n"
   end
 
   private
 
+  # Используется для обоих случаев (не должен вызывать исключение):
+  # /tests/x/questions/y   (y - порядковый номер вопроса в тесте)
+  # /questions/z           (z - идентификатор в базе данных)
   def find_test
     @test = Test.find(params[:test_id]) unless params[:test_id].nil?
+  end
+
+  # Используется для обоих случаев:
+  # /tests/x/questions/y   (y - порядковый номер вопроса в тесте)
+  # /questions/z           (z - идентификатор в базе данных)
+  def find_question
+    @question = if !params[:test_id].nil?
+                  @test.questions[params[:id].to_i - 1]
+                else
+                  Question.find(params[:id])
+                end
   end
 
   def question_params
