@@ -6,4 +6,10 @@ class Question < ApplicationRecord
   validates :answers, length: { in: 0..4 }
 
   default_scope { order(:id) }
+
+  def text_html(n)
+    n.to_s + '. ' + text.gsub("<pre>", "\n<pre>\n")
+                        .gsub("</pre>", "\n</pre>")
+                        .gsub("\\n", "\n")
+  end
 end

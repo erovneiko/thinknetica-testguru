@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :tests, only: [] do
-    resources :questions, shallow: true, except: %i[edit update]
+  resources :tests, only: :show do
+    resources :questions, shallow: true
   end
 end

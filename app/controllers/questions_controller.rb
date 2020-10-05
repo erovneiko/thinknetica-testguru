@@ -1,35 +1,38 @@
 class QuestionsController < ApplicationController
-  before_action :find_test, only: %i[index create]
-  before_action :find_question, only: %i[show destroy]
+  before_action :find_test, only: %i[index new create]
+  before_action :find_question, only: %i[show edit update destroy]
+  before_action :find_test_by_question, only: %i[show edit update destroy]
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_record_not_found
 
   def index
-    render html: @test.questions.pluck(:text)
-                      .map.with_index(1) { |s, i| i.to_s + '. ' + s }
-                      .join("\n<br><br>\n")
-                      .gsub("<pre>", "\n<pre>\n")
-                      .gsub("</pre>", "\n</pre>")
-                      .gsub("</pre>\n<br><br>", "</pre>")
-                      .html_safe
+    @questions = @test.questions
   end
 
-  def show
-    render html: @question.text.gsub("<pre>", "\n<pre>\n")
-                               .gsub("</pre>", "\n</pre>")
-                               .html_safe
+  def new
+    @question = Question.new
   end
 
   def create
-    if @test.questions.new(question_params).save
-      redirect_to test_questions_path
+    @question = @test.questions.new(question_params)
+
+    if @question.save
+      redirect_to test_questions_path(@test)
     else
-      redirect_to new_test_question_path(invalid: true)
+      render :new
+    end
+  end
+
+  def update
+    if @question.update(question_params)
+      redirect_to test_questions_path(@test)
+    else
+      render :edit
     end
   end
 
   def destroy
     @question.destroy
-    render plain: "Вопрос успешно удалён!\n"
+    redirect_to test_questions_path(@test)
   end
 
   private
@@ -40,6 +43,10 @@ class QuestionsController < ApplicationController
 
   def find_question
     @question = Question.find(params[:id])
+  end
+
+  def find_test_by_question
+    @test = @question.test
   end
 
   def question_params

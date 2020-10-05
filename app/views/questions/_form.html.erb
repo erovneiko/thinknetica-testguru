@@ -1,0 +1,7 @@
+<%= form_with model: model, method: method, local: true do |form| %>
+  <%= render 'errors', object: @question %>
+  <%= form.label :text, 'Question:' %>&nbsp;
+  <%= form.text_field :text, size: 60 %>
+  <br><br>
+  <%= form.submit %>
+<% end %>
