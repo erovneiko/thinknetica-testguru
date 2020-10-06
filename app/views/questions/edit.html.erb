@@ -1,7 +1,8 @@
 <%= render template: 'tests/show' %>
 <hr>
-<%= render 'form', model: [@question], method: :put %>
+<%= render 'form', model: [@question], method: :put, type: :edit %>
 <br>
 <%= link_to 'Back', test_questions_path(@test) %>
 |
 <%= link_to 'Delete', question_path(@question), method: :delete, data: { confirm: 'Are you sure?' } %>
+<br>

@@ -1,5 +1,6 @@
 <%= render template: 'tests/show' %>
 <hr>
-<%= render 'form', model: [@test, @question], method: :post %>
+<%= render 'form', model: [@test, @question], method: :post, type: :new %>
 <br>
 <%= link_to 'Back', test_questions_path(@test) %>
+<br>
