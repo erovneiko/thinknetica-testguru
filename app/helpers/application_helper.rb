@@ -3,7 +3,7 @@ module ApplicationHelper
     Time.now.year
   end
 
-  def github_url(author, repo)
-    "https://github.com/#{author}/#{repo}"
+  def github_url(name, author, repo)
+    link_to name, "https://github.com/#{author}/#{repo}"
   end
 end

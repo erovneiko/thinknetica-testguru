@@ -1,6 +1,6 @@
 <%= form_with model: model, method: method, local: true do |form| %>
   <%= render 'errors', object: @question %>
-  <%= raw question_header(type, @test) %>
+  <%= raw question_header(@question) %>
   <%= form.label :text, 'Question:' %>&nbsp;
   <%= form.text_field :text, size: 60 %>
   <br><br>

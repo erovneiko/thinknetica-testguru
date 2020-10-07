@@ -1,6 +1,6 @@
 <tr>
   <td>
-    <%= sanitize question.text_html(question_counter + 1) %>
+    <%= text_with_index(question, question_counter + 1) %>
     <% unless question.text.include?("</pre>") %>
       <br><br>
     <% end %>

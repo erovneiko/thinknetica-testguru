@@ -1,6 +1,6 @@
 <%= render template: 'tests/show' %>
 <hr>
-<%= sanitize @question.text_html(@question.id) %>
+<%= text_with_index(@question, @question.id) %>
 <% unless @question.text.include?("<pre>") %>
 <br><br>
 <% end %>
