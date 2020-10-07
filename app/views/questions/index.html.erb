@@ -1,0 +1,9 @@
+<%= render template: 'tests/show' %>
+<hr>
+<table>
+  <%= render @questions %>
+</table>
+<%= link_to 'Back', tests_path %>
+|
+<%= link_to 'New', new_test_question_path(@test) %>
+<br>

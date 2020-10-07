@@ -5,8 +5,8 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
-user1 = User.create(name: "Евгений", email: "a@a.com")
-user2 = User.create(name: "Сергей", email: "b@b.com")
+user1 = User.create(name: "Евгений", email: "erovneiko@mail.ru")
+user2 = User.create(name: "Сергей", email: "sergey@gmail.com")
 
 category = Category.create(title: "Java")
   test     = category.tests.create(title: "Java - Основы", level: 1, author_id: user1.id)
@@ -30,7 +30,7 @@ user1.tests << test
 
 category = Category.create(title: "Python")
   test     = category.tests.create(title: "Python - Основы", level: 1, author_id: user1.id)
-    question = test.questions.create(text: "Что напечатает код?<pre>def func(n)\nn = n + 1\nprint(func(0))</pre>")
+    question = test.questions.create(text: "Что напечатает код?<pre>def func(n)\\nn = n + 1\\nprint(func(0))</pre>")
       question.answers.create(text: "0")
       question.answers.create(text: "1", correct: true)
       question.answers.create(text: "func(0)")
