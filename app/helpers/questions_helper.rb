@@ -1,14 +1,10 @@
 module QuestionsHelper
-  FORM_HEADER = { new: "Create new question in test \"&\":",
-                  edit: "Edit question in test \"&\":" }.freeze
-
   def question_header(question)
-    header = if question.new_record?
-               FORM_HEADER[:new]
-             else
-               FORM_HEADER[:edit]
-             end
-    '<b>' + header.sub('&', question.test.title) + '</b><br><br>'
+    if question.new_record?
+      "Create new question in test \"#{question.test.title}\":"
+    else
+      "Edit question in test \"#{question.test.title}\":"
+    end
   end
 
   def text_with_index(question, index)

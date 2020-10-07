@@ -2,7 +2,7 @@
 <hr>
 <%= text_with_index(@question, @question.id) %>
 <% unless @question.text.include?("<pre>") %>
-<br><br>
+  <br><br>
 <% end %>
 <%= link_to 'Back', test_questions_path(@test) %>
 |
