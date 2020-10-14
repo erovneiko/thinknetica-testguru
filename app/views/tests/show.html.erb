@@ -1,7 +1,7 @@
 <table>
-  <tr><td style="text-align: left; font-weight: bold;">Test:</td><td>&nbsp;</td><td><%= @test.title %></td></tr>
-  <tr><td style="text-align: left; font-weight: bold;">Category:</td><td>&nbsp;</td><td><%= @test.category.title %></td></tr>
-  <tr><td style="text-align: left; font-weight: bold;">Level:</td><td>&nbsp;</td><td><%= test_level(@test) %></td></tr>
-  <tr><td style="text-align: left; font-weight: bold;">Author:</td><td>&nbsp;</td><td><%= @test.author.name %><%
+  <tr><td style="font-weight: bold;">Test:</td><td>&nbsp;</td><td><%= @test.title %></td></tr>
+  <tr><td style="font-weight: bold;">Category:</td><td>&nbsp;</td><td><%= @test.category.title %></td></tr>
+  <tr><td style="font-weight: bold;">Level:</td><td>&nbsp;</td><td><%= test_level(@test) %></td></tr>
+  <tr><td style="font-weight: bold;">Author:</td><td>&nbsp;</td><td><%= @test.author.name %><%
   %> (<a href="mailto: <%= @test.author.email %>"><%= @test.author.email %></a>)</td></tr>
 </table>
