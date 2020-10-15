@@ -1,10 +1,5 @@
 <% if object.errors.present? %>
-  <style>
-      div.field_with_errors {
-          display: inline;
-      }
-  </style>
-  <b>Errors:</b><br>
+  <b>Errors:</b>
   <ul>
     <% object.errors.full_messages.each do |message| %>
       <li><%= message %></li>

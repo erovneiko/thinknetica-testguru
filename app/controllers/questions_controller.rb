@@ -30,8 +30,10 @@ class QuestionsController < ApplicationController
   end
 
   def update
+    @test = @question.test
+
     if @question.update(question_params)
-      redirect_to test_questions_path(@question.test)
+      redirect_to test_questions_path(@test)
     else
       render :edit
     end

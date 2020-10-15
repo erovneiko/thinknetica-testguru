@@ -1,14 +1,19 @@
 <%= form_with model: model, method: method, local: true do |form| %>
   <%= render 'shared/errors', object: @question %>
 
-  <b><%= question_header(@question) %></b>
+  <p>
+    <%= form.label :text, 'Question:' %>
 
-  <br><br>
+    <% if @question.errors.empty? %>
+      <br>
+    <% end %>
 
-  <%= form.label :text, 'Question:' %>&nbsp;
-  <%= form.text_field :text, size: 60 %>
+    <%= form.text_area :text, rows: 5, cols: 60 %>
+  </p>
 
-  <br><br>
-
-  <%= form.submit %>
+  <div class="actions">
+    <%= form.submit %>
+  </div>
 <% end %>
+
+<br>
