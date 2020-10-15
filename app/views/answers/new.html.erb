@@ -1,9 +1,12 @@
+<%= render template: 'tests/show' %>
+<hr>
+
 <h1>New Answer</h1>
 
 <p>
-  <%= @question.text %>
+  <%= question_text(@question) %>
 </p>
 
-<%= render 'form' %>
+<%= render 'form', model: [@question, @answer] %>
 
-<%= link_to 'Back', @answer.question %>
+<%= link_to 'Back', @question %>

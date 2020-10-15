@@ -1,22 +1,16 @@
 <%= render template: 'tests/show' %>
 <hr>
-<%= text_with_index(@question, @question.id) %>
 
-<% unless @question.text.include?("<pre>") %>
-<br>
-<% end %>
+<p>
+  <%= question_text(@question) %>
+</p>
 
 <h2>Answers</h2>
-
-<%= link_to 'New answer', new_question_answer_path(@question) %>
 
 <ol>
   <%= render @question.answers %>
 </ol>
 
-<%= link_to 'Back', @question.test %>
+<%= link_to 'Back', test_questions_path(@question.test) %>
 |
-<%= link_to 'Edit', edit_question_path(@question) %>
-|
-<%= link_to 'Delete', @question, method: :delete, data: { confirm: 'Are you sure?' } %>
-<br>
+<%= link_to 'New', new_question_answer_path(@question) %>

@@ -1,16 +1,19 @@
-<p id="notice"><%= notice %></p>
+<%= render template: 'tests/show' %>
+<hr>
 
 <p>
-  <%= @answer.question.text %>
+  <%= question_text(@answer.question) %>
 </p>
 
 <p>
   <b>Answer:</b>
+  <br>
   <%= @answer.text %>
 </p>
 
 <p>
   <b>Correct:</b>
+  <br>
   <%= @answer.correct %>
 </p>
 

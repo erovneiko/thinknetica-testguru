@@ -1,17 +1,33 @@
-<%= form_with(model: [@question, @answer], local: true) do |form| %>
-  <% render 'shared/errors', object: @answer %>
+<%= form_with model: model, local: true do |form| %>
+  <%# render 'shared/errors', object: @answer %>
+
+  <% if @answer.errors.present? %>
+    <b>Errors:</b>
+    <ul>
+      <% @answer.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  <% end %>
 
   <p>
-    <%= form.label :text, 'Answer:' %><br>
-    <%= form.text_area :text, rows: 7, cols: 60 %>
+    <%= form.label :text, 'Answer:' %>
+
+    <% if @answer.errors.empty? %>
+      <br>
+    <% end %>
+
+    <%= form.text_area :text, rows: 5, cols: 60 %>
   </p>
 
   <p>
-    <%= form.label :correct %><br>
     <%= form.check_box :correct %>
+    <%= form.label :correct, style: 'vertical-align: text-bottom;' %>
   </p>
 
   <div class="actions">
     <%= form.submit %>
   </div>
 <% end %>
+
+<br>
