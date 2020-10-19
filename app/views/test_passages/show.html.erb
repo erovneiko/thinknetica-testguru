@@ -3,7 +3,16 @@
 
 <h1>Passing Test</h1>
 
-<p style="margin-top: 20px">
+<%
+  @total = @test.questions.count
+  @index = @test.questions.index(@test_passage.current_question) + 1
+%>
+
+<p>
+  <%= "%d of %d" % [@index, @total] %>
+</p>
+
+<p>
   <%= question_text(@test_passage.current_question) %>
 </p>
 
