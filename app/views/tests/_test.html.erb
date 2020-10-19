@@ -1,1 +1,10 @@
-<%= link_to test.title, test_questions_path(test) %> (<%= test.questions.size %>)<br>
+<tr>
+  <td><%= link_to test.title, test_questions_path(test) %></td>
+  <td style="text-align: center"><%= test.questions.count %></td>
+  <td style="text-align: center"><%= test_level(test) %></td>
+  <td></td>
+<!--  <td><%#= link_to 'Show', test %></td>-->
+<!--  <td><%#= link_to 'Edit', edit_test_path(test) %></td>-->
+<!--  <td><%#= link_to 'Delete', test, method: :delete, data: { confirm: 'Are you sure?'} %></td>-->
+  <td><%= button_to 'Start', start_test_path(test) %></td>
+</tr>

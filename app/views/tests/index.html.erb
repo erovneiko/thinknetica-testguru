@@ -1,1 +1,14 @@
-<%= render @tests %>
+<!--<p>-->
+  <%#= link_to 'New', new_test_path %>
+<!--</p>-->
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th style="text-align: center">Length</th>
+    <th style="text-align: center">Level</th>
+    <th style="width: 10px"></th>
+    <th></th>
+  </tr>
+  <%= render @tests %>
+</table>

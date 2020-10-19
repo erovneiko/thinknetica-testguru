@@ -1,0 +1,21 @@
+<%= render template: 'tests/show' %>
+<hr>
+
+<h1>Passing Test</h1>
+
+<p style="margin-top: 20px">
+  <%= question_text(@test_passage.current_question) %>
+</p>
+
+<%= form_with url: test_passage_path(@test_passage), method: :put, local: true do |form| %>
+  <%= form.collection_check_boxes :answer_ids, @test_passage.current_question.answers, :id, :text, include_hidden: false do |b| %>
+    <p>
+      <%= b.check_box id: "answer_ids_#{b.object.id}" %>
+      <%= b.label %>
+    </p>
+  <% end %>
+
+  <p style="margin-top: 20px">
+    <%= form.submit 'Next' %>
+  </p>
+<% end %>
