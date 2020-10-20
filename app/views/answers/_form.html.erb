@@ -1,22 +1,8 @@
 <%= form_with model: model, local: true do |form| %>
-  <%# render 'shared/errors', object: @answer %>
-
-  <% if @answer.errors.present? %>
-    <b>Errors:</b>
-    <ul>
-      <% @answer.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-    </ul>
-  <% end %>
+  <%= render 'shared/errors', object: @answer %>
 
   <p>
-    <%= form.label :text, 'Answer:' %>
-
-    <% if @answer.errors.empty? %>
-      <br>
-    <% end %>
-
+    <%= form.label :text, 'Answer:', style: 'display: block' %>
     <%= form.text_area :text, rows: 5, cols: 60 %>
   </p>
 

@@ -3,11 +3,6 @@
 
 <h1>Passing Test</h1>
 
-<%
-  @total = @test.questions.count
-  @index = @test.questions.index(@test_passage.current_question) + 1
-%>
-
 <p>
   <%= "%d of %d" % [@index, @total] %>
 </p>
