@@ -3,20 +3,18 @@
 
 <h1>Test completed!</h1>
 
-<% if @result >= 85 %>
+<% if @test_passage.success? %>
 
-  <b style="color: green;">
-    <%= "You passed with a score of %d%%" % @result %>
-  </b>
+  <h3 style="color: green;">
+    <%= "You passed with a score of %d%%" % @test_passage.result %>
+  </h3>
 
 <% else %>
 
-  <b style="color: red;">
-    <%= "You failed with a score of %d%%" % @result %>
-  </b>
+  <h3 style="color: red;">
+    <%= "You failed with a score of %d%%" % @test_passage.result %>
+  </h3>
 
 <% end %>
-
-<br><br>
 
 <%= link_to 'Back', root_path %>
