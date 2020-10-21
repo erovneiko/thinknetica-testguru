@@ -2,3 +2,19 @@
 <hr>
 
 <h1>Test completed!</h1>
+
+<% if @test_passage.success? %>
+
+  <h3 style="color: green;">
+    <%= "You passed with a score of %d%%" % @test_passage.result %>
+  </h3>
+
+<% else %>
+
+  <h3 style="color: red;">
+    <%= "You failed with a score of %d%%" % @test_passage.result %>
+  </h3>
+
+<% end %>
+
+<%= link_to 'Back', root_path %>
