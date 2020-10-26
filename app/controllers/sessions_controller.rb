@@ -8,9 +8,16 @@ class SessionsController < ApplicationController
 
     if user&.authenticate(params[:password])
       session[:user_id] = user.id
-      redirect_to tests_path
+      session[:email] = user.email
+      redirect_to cookies[:path]
     else
       render :new
     end
+  end
+
+  def exit
+    @current_user = nil
+    reset_session
+    render :new
   end
 end
