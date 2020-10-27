@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
 
   def authenticate_user!
     unless current_user
-      cookies[:path] = request.fullpath
+      cookies[:original_request_path] = request.fullpath
       return redirect_to login_path, alert: 'Are you a Guru? Verify your Email and Password please'
     end
 
@@ -18,7 +18,7 @@ class ApplicationController < ActionController::Base
   end
 
   def current_user
-    @current_user ||= User.find_by(id: session[:user_id]) if session[:user_id]
+    @current_user ||= User.find(session[:user_id]) if session[:user_id]
   end
 
   def logged_in?

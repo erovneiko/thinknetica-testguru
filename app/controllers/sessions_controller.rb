@@ -9,8 +9,9 @@ class SessionsController < ApplicationController
     if user&.authenticate(params[:password])
       session[:user_id] = user.id
       session[:email] = user.email
-      redirect_to cookies[:path]
+      redirect_to cookies[:original_request_path] || root_path
     else
+      flash.now[:alert] = 'Invalid email or password'
       render :new
     end
   end
@@ -18,6 +19,6 @@ class SessionsController < ApplicationController
   def exit
     @current_user = nil
     reset_session
-    render :new
+    redirect_to root_path
   end
 end
