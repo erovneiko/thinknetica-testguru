@@ -10,26 +10,24 @@
   </head>
 
   <body>
-    <table width="100%">
+    <table width="100%" class="title">
       <tr>
-        <td style="padding: 0">
-          <b style="font-size: large">
-            <%= link_to 'TestGuru', root_path, style: 'text-decoration: none' %>
+        <td>
+          <b class="title">
+            <%= link_to 'TestGuru', root_path %>
           </b>
         </td>
-        <td style="padding: 0" class="nav user">
-          <% if logged_in? %>
-            Welcome, <b><%= current_user.name %></b> Guru!
-          <% end %>
-          <%= link_to 'Signup', signup_path, style: 'margin-left: 15px' %>
-          |
-          <%= link_to 'Login', login_path %>
-          |
-          <%= link_to 'Exit', exit_path, method: :delete %>
-        </td>
+        <% if user_signed_in? %>
+          <td align="right">
+            Welcome, <%= current_user.name %>, Guru!
+            &nbsp;|&nbsp;
+            <%= link_to 'Exit', destroy_user_session_path, method: :delete %>
+          </td>
+        <% end %>
       </tr>
     </table>
     <hr style="margin-bottom: 15px">
+    <%= render 'shared/flash' %>
     <%= yield %>
     <%= render 'shared/footer' %>
   </body>

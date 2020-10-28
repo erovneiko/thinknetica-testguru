@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TestGuru</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+
+<body>
+<table width="100%" class="admin">
+  <tr>
+    <td>
+      <b class="title">
+        <%= link_to 'TestGuru', root_path %>
+        &nbsp;|&nbsp;
+        <%= link_to 'Admin Panel', admin_tests_path %>
+      </b>
+    </td>
+    <% if user_signed_in? %>
+      <td align="right">
+        Welcome, <%= current_user.name %>, Guru!
+        &nbsp;|&nbsp;
+        <%= link_to 'Exit', destroy_user_session_path, method: :delete %>
+      </td>
+    <% end %>
+  </tr>
+</table>
+<hr style="margin-bottom: 15px">
+<%= render 'shared/flash' %>
+<%= yield %>
+<%= render 'shared/footer' %>
+</body>
+</html>

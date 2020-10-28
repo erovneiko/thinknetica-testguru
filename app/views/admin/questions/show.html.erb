@@ -1,0 +1,16 @@
+<%= render template: 'tests/show' %>
+<hr>
+
+<p>
+  <%= question_text(@question) %>
+</p>
+
+<h2>Answers</h2>
+
+<ol>
+  <%= render @question.answers %>
+</ol>
+
+<%= link_to 'Back', admin_test_questions_path(@question.test) %>
+|
+<%= link_to 'New', new_admin_question_answer_path(@question) %>
