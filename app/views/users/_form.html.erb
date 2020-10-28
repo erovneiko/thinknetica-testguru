@@ -1,0 +1,29 @@
+<%= form_with model: @user, local: true do |form| %>
+  <%= render 'shared/errors', object: @user %>
+
+  <p>
+    <%= form.label :name, style: 'display: block' %>
+    <%= form.text_field :name %>
+  </p>
+
+  <p>
+    <%= form.label :email, style: 'display: block' %>
+    <%= form.text_field :email %>
+  </p>
+
+  <p>
+    <%= form.label :password, style: 'display: block' %>
+    <%= form.password_field :password %>
+  </p>
+
+  <p>
+    <%= form.label :password_confirmation, style: 'display: block' %>
+    <%= form.password_field :password_confirmation %>
+  </p>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+
+<br>

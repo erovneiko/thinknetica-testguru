@@ -1,0 +1,10 @@
+.flash {
+  border: 2px solid;
+  padding: 4px 8px;
+  border-radius: 5px;
+  display: inline;
+}
+
+.flash.alert {
+  border-color: #ef2727;
+}
