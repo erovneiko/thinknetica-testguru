@@ -1,0 +1,14 @@
+<%= form_with model: model, local: true do |form| %>
+  <%= render 'shared/errors', object: @question %>
+
+  <p>
+    <%= form.label :text, 'Question:' %><br>
+    <%= form.text_area :text, rows: 5, cols: 60, autofocus: true %>
+  </p>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+
+<br>

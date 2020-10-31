@@ -17,10 +17,35 @@ ol {
     padding-inline-start: 18px;
 }
 
-li {
-    padding-left: 8px;
-}
-
 label {
     vertical-align: text-bottom;
+}
+
+ul {
+    margin-block-start: 0;
+    padding-inline-start: 25px;
+}
+
+div.actions {
+    margin-top: 30px;
+}
+
+table.title td {
+    padding: 0;
+}
+
+table.admin {
+    background-color: #cce2ff;
+}
+
+table.admin td {
+    padding: 7px 10px 5px 10px;
+}
+
+a.title,
+b.title,
+b.title a {
+    font-size: large;
+    text-decoration: none;
+    color: #666;
 }

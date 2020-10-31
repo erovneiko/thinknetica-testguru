@@ -1,0 +1,19 @@
+<%= form_with model: model, local: true do |form| %>
+  <%= render 'shared/errors', object: @answer %>
+
+  <p>
+    <%= form.label :text, 'Answer:' %><br>
+    <%= form.text_area :text, rows: 5, cols: 60, autofocus: true %>
+  </p>
+
+  <p>
+    <%= form.check_box :correct %>
+    <%= form.label :correct %>
+  </p>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+
+<br>

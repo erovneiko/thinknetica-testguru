@@ -1,0 +1,12 @@
+<%= render template: 'tests/show' %>
+<hr>
+
+<h1>New Answer</h1>
+
+<p>
+  <%= question_text(@question) %>
+</p>
+
+<%= render 'form', model: [:admin, @question, @answer] %>
+
+<%= link_to 'Back', admin_question_path(@question) %>
