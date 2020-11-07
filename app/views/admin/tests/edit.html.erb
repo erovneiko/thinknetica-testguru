@@ -1,7 +1,8 @@
-<h1>Edit test</h1>
+<h1><%= t('.header') %></h1>
 
 <%= render 'form' %>
 
-<%= link_to 'Back', admin_tests_path %>
+<%= link_to t('helpers.links.back'), admin_tests_path %>
 |
-<%= link_to 'Delete', admin_test_path(@test), method: :delete, data: { confirm: 'Are you sure?' } %>
+<%= link_to t('helpers.links.delete'), admin_test_path(@test),
+            method: :delete, data: { confirm: t('helpers.links.confirm') } %>

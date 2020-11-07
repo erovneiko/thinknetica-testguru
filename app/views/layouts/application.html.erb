@@ -19,9 +19,9 @@
         </td>
         <% if user_signed_in? %>
           <td align="right">
-            Welcome, <%= current_user.name %>, Guru!
+            <%= t('.welcome_header', name: current_user.name) %>
             &nbsp;|&nbsp;
-            <%= link_to 'Exit', destroy_user_session_path, method: :delete %>
+            <%= link_to t('.exit'), destroy_user_session_path, method: :delete %>
           </td>
         <% end %>
       </tr>

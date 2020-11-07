@@ -3,10 +3,11 @@
   <td style="text-align: center"><%= test.questions.count %></td>
   <td style="text-align: center"><%= test_level(test) %></td>
   <td nowrap style="padding-left: 10px; padding-right: 10px">
-    <%= link_to 'Show', admin_test_questions_path(test) %>
+    <%= link_to t('helpers.links.show'), admin_test_questions_path(test) %>
     |
-    <%= link_to 'Edit', edit_admin_test_path(test) %>
+    <%= link_to t('helpers.links.edit'), edit_admin_test_path(test) %>
     |
-    <%= link_to 'Delete', admin_test_path(test), method: :delete, data: { confirm: 'Are you sure?' } %>
+    <%= link_to t('helpers.links.delete'), admin_test_path(test),
+                method: :delete, data: { confirm: t('helpers.links.confirm') } %>
   </td>
 </tr>

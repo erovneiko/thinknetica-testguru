@@ -1,7 +1,7 @@
 <%= render template: 'tests/show' %>
 <hr>
 
-<h1>New Answer</h1>
+<h1><%= t('.header') %></h1>
 
 <p>
   <%= question_text(@question) %>
@@ -9,4 +9,4 @@
 
 <%= render 'form', model: [:admin, @question, @answer] %>
 
-<%= link_to 'Back', admin_question_path(@question) %>
+<%= link_to t('helpers.links.back'), admin_question_path(@question) %>

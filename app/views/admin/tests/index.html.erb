@@ -1,11 +1,11 @@
 <table>
   <tr>
-    <th class="test first_col">Title</th>
-    <th style="text-align: center">Num</th>
-    <th style="text-align: center">Level</th>
+    <th class="test first_col"><%= t('activerecord.models.test') %></th>
+    <th style="text-align: center"><%= t('tests.index.num') %></th>
+    <th style="text-align: center"><%= t('activerecord.attributes.test.level') %></th>
   </tr>
   <%= render @tests %>
 </table>
 
 <br>
-<%= link_to 'New', new_admin_test_path %>
+<%= link_to t('helpers.links.new'), new_admin_test_path %>

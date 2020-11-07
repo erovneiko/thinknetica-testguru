@@ -5,11 +5,12 @@
     <br>
   <% end %>
 
-  <%= link_to 'Show', admin_question_path(question) %>
+  <%= link_to t('helpers.links.show'), admin_question_path(question) %>
   |
-  <%= link_to 'Edit', edit_admin_question_path(question) %>
+  <%= link_to t('helpers.links.edit'), edit_admin_question_path(question) %>
   |
-  <%= link_to 'Delete', admin_question_path(question), method: :delete, data: { confirm: 'Are you sure?' } %>
+  <%= link_to t('helpers.links.delete'), admin_question_path(question),
+              method: :delete, data: { confirm: t('helpers.links.confirm') } %>
 
   <br><br>
 </li>

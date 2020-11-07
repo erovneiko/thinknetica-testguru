@@ -1,8 +1,8 @@
 <table>
   <tr>
-    <th class="test first_col">Title</th>
-    <th style="text-align: center">Num</th>
-    <th style="text-align: center">Level</th>
+    <th class="test first_col"><%= t('activerecord.models.test') %></th>
+    <th style="text-align: center"><%= t('.num') %></th>
+    <th style="text-align: center"><%= t('activerecord.attributes.test.level') %></th>
   </tr>
   <%= render @tests %>
 </table>

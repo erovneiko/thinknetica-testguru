@@ -1,0 +1,101 @@
+ru:
+  layouts:
+    application:
+      welcome_header: "Привет, Гуру %{name}!"
+      welcome_login: "Привет, %{name}!"
+      exit: "Выход"
+    admin:
+      panel: "Панель Администратора"
+
+  activerecord:
+    models:
+      user: "Пользователь"
+      category: "Категория"
+      test: "Тест"
+      question: "Вопрос"
+      answer: "Ответ"
+    attributes:
+      user:
+        name: "Имя"
+      test:
+        title: "Название"
+        level: "Уровень"
+        author: "Автор"
+        category_id: "Категория"
+      question:
+        text: "Текст вопроса"
+      answer:
+        correct: "Правильный"
+        'true': "Да"
+        'false': "Нет"
+        text: "Текст ответа"
+        too_much: "содержит слишком много ответов"
+    errors:
+      messages:
+        blank: "не может быть пустым"
+
+  tests:
+    index:
+      num: "Кол"
+    levels:
+      easy: "лёгкий"
+      normal: "средний"
+      advanced: "трудный"
+      hard: "тяжёлый"
+      infernal: "запредельный"
+    test:
+      start: "Старт"
+
+  test_passages:
+    show:
+      passing: "Прохождение теста"
+      index_of_total: "%{index} из %{total}"
+      next: "Следующий"
+    result:
+      completed: "Тест завершён!"
+      success: "Вы успешно справились с результатом %{result}%"
+      failure: "Вы провалились с результатом %{result}%"
+
+  tests_mailer:
+    completed_test:
+      subject: "Вы завершили тест на TestGuru!"
+
+  admin:
+    tests:
+      new:
+        header: "Новый тест"
+      edit:
+        header: "Изменить тест"
+    questions:
+      new:
+        header: "Новый вопрос в тесте \"%{title}\""
+      edit:
+        header: "Изменить вопрос в тесте \"%{title}\""
+      index:
+        questions: "Вопросы"
+      show:
+        answers: "Ответы"
+    answers:
+      new:
+        header: "Новый ответ"
+      edit:
+        header: "Изменить ответ"
+
+  helpers:
+    links:
+      back: "Назад"
+      new: "Новый"
+      show: "Показать"
+      edit: "Изменить"
+      delete: "Удалить"
+      confirm: "Вы уверены?"
+    submit:
+      create: "Создать"
+      update: "Сохранить"
+    select:
+      prompt: "Сделайте выбор"
+  shared:
+    errors:
+      header:
+        one: "Ошибка"
+        other: "Ошибки"
