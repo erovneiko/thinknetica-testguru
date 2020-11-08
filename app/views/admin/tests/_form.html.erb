@@ -2,17 +2,17 @@
   <%= render 'shared/errors', object: @test %>
 
   <p>
-    <%= form.label :title, 'Title:' %><br>
+    <%= form.label :title %><br>
     <%= form.text_area :title, rows: 5, cols: 60, autofocus: true %>
   </p>
 
   <p>
-    <%= form.label :category_id, 'Category:' %><br>
+    <%= form.label :category_id %><br>
     <%= form.collection_select :category_id, Category.all, :id, :title, prompt: true %>
   </p>
 
   <p>
-    <%= form.label :level, 'Level:' %><br>
+    <%= form.label :level %><br>
     <%= form.number_field :level, style: 'width: 40px' %>
   </p>
 

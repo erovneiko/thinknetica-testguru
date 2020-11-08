@@ -6,15 +6,15 @@
 </p>
 
 <p>
-  <b>Answer:</b>
+  <b><%= t('activerecord.models.answer') %>:</b>
   <br>
   <%= @answer.text %>
 </p>
 
 <p>
-  <b>Correct:</b>
+  <b><%= t('activerecord.attributes.answer.correct') %>:</b>
   <br>
-  <%= @answer.correct %>
+  <%= t('activerecord.attributes.answer.' + @answer.correct.to_s) %>
 </p>
 
-<%= link_to 'Back', admin_question_path(@answer.question) %>
+<%= link_to t('helpers.links.back'), admin_question_path(@answer.question) %>

@@ -1,10 +1,11 @@
 <%= render template: 'tests/show' %>
 <hr>
 
-<h1>Passing Test</h1>
+<h1><%= t('.passing') %></h1>
 
 <p>
-  <%= "%d of %d" % [@index, @total] %>
+  <%#= "%d of %d" % [@index, @total] %>
+  <%= t('.index_of_total', index: @index, total: @total) %>
 </p>
 
 <p>
@@ -20,6 +21,6 @@
   <% end %>
 
   <p style="margin-top: 20px">
-    <%= form.submit 'Next' %>
+    <%= form.submit t('.next') %>
   </p>
 <% end %>

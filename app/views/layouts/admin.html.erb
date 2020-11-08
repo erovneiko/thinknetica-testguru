@@ -15,15 +15,15 @@
     <td>
       <b class="title">
         <%= link_to 'TestGuru', root_path %>
-        &nbsp;|&nbsp;
-        <%= link_to 'Admin Panel', admin_tests_path %>
+        &nbsp;&ndash;&nbsp;
+        <%= link_to t('.panel'), admin_tests_path %>
       </b>
     </td>
     <% if user_signed_in? %>
       <td align="right">
-        Welcome, <%= current_user.name %>, Guru!
+        <%= t('layouts.application.welcome_header', name: current_user.name) %>
         &nbsp;|&nbsp;
-        <%= link_to 'Exit', destroy_user_session_path, method: :delete %>
+        <%= link_to t('layouts.application.exit'), destroy_user_session_path, method: :delete %>
       </td>
     <% end %>
   </tr>

@@ -28,8 +28,8 @@ module TestGuru
     # the framework and any gems in your application.
 
     config.time_zone = 'Minsk'
-    config.i18n.available_locales = [:en, :ru]
-    config.i18n.default_locale = :en
+    config.i18n.available_locales = %i[en ru]
+    config.i18n.default_locale = :ru
     # config.action_controller.allow_forgery_protection = false
   end
 end
