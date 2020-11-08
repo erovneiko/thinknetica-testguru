@@ -30,6 +30,7 @@ en:
         'false': "No"
         text: "Answer"
         too_much: "has too much answers"
+        question: "Question"
     errors:
       messages:
         blank: "can't be blank"

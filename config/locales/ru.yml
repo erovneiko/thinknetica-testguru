@@ -30,6 +30,7 @@ ru:
         'false': "Нет"
         text: "Текст ответа"
         too_much: "содержит слишком много ответов"
+        question: "Вопрос"
     errors:
       messages:
         blank: "не может быть пустым"
