@@ -10,42 +10,13 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
- *= require_self
+ * require_tree .
+ * require_self
  */
-ol {
-    padding-inline-start: 18px;
-}
-
-label {
-    vertical-align: text-bottom;
-}
-
-ul {
-    margin-block-start: 0;
-    padding-inline-start: 25px;
-}
-
-div.actions {
-    margin-top: 30px;
-}
-
-table.title td {
-    padding: 0;
-}
-
-table.admin {
-    background-color: #cce2ff;
-}
-
-table.admin td {
-    padding: 7px 10px 5px 10px;
-}
-
-a.title,
-b.title,
-b.title a {
-    font-size: large;
-    text-decoration: none;
-    color: #666;
-}
+@import "bootstrap";
+@import "parts/errors";
+@import "parts/flash";
+@import "parts/footer";
+@import "parts/lists";
+@import "parts/questions";
+@import "parts/tests";

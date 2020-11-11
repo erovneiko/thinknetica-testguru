@@ -1,12 +1,14 @@
-<%= render template: 'tests/show' %>
-<hr>
+<div class="test-header">
+  <%= render template: 'tests/show' %>
+</div>
 
-<h2><%= t('.questions') %></h2>
+<div class="m-3">
+  <h3><%= t('.questions') %></h3>
 
-<ol>
-  <%= render @questions %>
-</ol>
+  <ol>
+    <%= render @questions %>
+  </ol>
 
-<%= link_to t('helpers.links.back'), admin_tests_path %>
-|
-<%= link_to t('helpers.links.new'), new_admin_test_question_path(@test) %>
+  <%= link_to t('helpers.links.back'), admin_tests_path, class: 'mr-3' %>
+  <%= link_to t('helpers.links.new'), new_admin_test_question_path(@test), class: 'mr-3' %>
+</div>

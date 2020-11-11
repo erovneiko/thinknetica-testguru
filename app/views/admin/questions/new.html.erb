@@ -1,8 +1,11 @@
-<%= render template: 'tests/show' %>
-<hr>
+<div class="test-header">
+  <%= render template: 'tests/show' %>
+</div>
 
-<h1><%= question_header(@question) %></h1>
+<div class="m-3">
+  <h3><%= question_header(@question) %></h3>
 
-<%= render 'form', model: [:admin, @test, @question] %>
+  <%= render 'form', model: [:admin, @test, @question] %>
 
-<%= link_to t('helpers.links.back'), admin_test_questions_path(@test) %>
+  <%= link_to t('helpers.links.back'), admin_test_questions_path(@test) %>
+</div>

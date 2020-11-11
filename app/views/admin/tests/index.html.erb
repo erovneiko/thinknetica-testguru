@@ -1,11 +1,11 @@
-<table>
+<table class="tests table table-striped">
   <tr>
-    <th class="test first_col"><%= t('activerecord.models.test') %></th>
-    <th style="text-align: center"><%= t('tests.index.num') %></th>
-    <th style="text-align: center"><%= t('activerecord.attributes.test.level') %></th>
+    <th width="10%" class="text-left"><%= t('activerecord.models.test') %></th>
+    <th width="3%"><%= t('tests.index.num') %></th>
+    <th width="11%"><%= t('activerecord.attributes.test.level') %></th>
+    <th></th>
   </tr>
   <%= render @tests %>
 </table>
 
-<br>
-<%= link_to t('helpers.links.new'), new_admin_test_path %>
+<%= link_to t('helpers.links.new'), new_admin_test_path, class: 'btn btn-primary ml-2' %>

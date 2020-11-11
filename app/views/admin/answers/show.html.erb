@@ -1,20 +1,23 @@
-<%= render template: 'tests/show' %>
-<hr>
+<div class="test-header">
+  <%= render template: 'tests/show' %>
+</div>
 
-<p>
-  <%= question_text(@answer.question) %>
-</p>
+<div class="m-3">
+  <p>
+    <%= question_text(@answer.question) %>
+  </p>
 
-<p>
-  <b><%= t('activerecord.models.answer') %>:</b>
-  <br>
-  <%= @answer.text %>
-</p>
+  <p>
+    <b><%= t('activerecord.models.answer') %>:</b>
+    <br>
+    <%= @answer.text %>
+  </p>
 
-<p>
-  <b><%= t('activerecord.attributes.answer.correct') %>:</b>
-  <br>
-  <%= t('activerecord.attributes.answer.' + @answer.correct.to_s) %>
-</p>
+  <p>
+    <b><%= t('activerecord.attributes.answer.correct') %>:</b>
+    <br>
+    <%= t('activerecord.attributes.answer.' + @answer.correct.to_s) %>
+  </p>
 
-<%= link_to t('helpers.links.back'), admin_question_path(@answer.question) %>
+  <%= link_to t('helpers.links.back'), admin_question_path(@answer.question) %>
+</div>

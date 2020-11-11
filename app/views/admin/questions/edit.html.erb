@@ -1,11 +1,13 @@
-<%= render template: 'tests/show' %>
-<hr>
+<div class="test-header">
+  <%= render template: 'tests/show' %>
+</div>
 
-<h1><%= question_header(@question) %></h1>
+<div class="m-3">
+  <h3><%= question_header(@question) %></h3>
 
-<%= render 'form', model: [:admin, @question] %>
+  <%= render 'form', model: [:admin, @question] %>
 
-<%= link_to t('helpers.links.back'), admin_test_questions_path(@test) %>
-|
-<%= link_to t('helpers.links.delete'), admin_question_path(@question),
-            method: :delete, data: { confirm: t('helpers.links.confirm') } %>
+  <%= link_to t('helpers.links.back'), admin_test_questions_path(@test), class: 'mr-3' %>
+  <%= link_to t('helpers.links.delete'), admin_question_path(@question), class: 'mr-3',
+              method: :delete, data: { confirm: t('helpers.links.confirm') } %>
+</div>

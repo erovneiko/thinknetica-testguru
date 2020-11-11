@@ -1,8 +1,9 @@
-<h1><%= t('.header') %></h1>
+<div class="m-3">
+  <h3><%= t('.header') %></h3>
 
-<%= render 'form' %>
+  <%= render 'form' %>
 
-<%= link_to t('helpers.links.back'), admin_tests_path %>
-|
-<%= link_to t('helpers.links.delete'), admin_test_path(@test),
-            method: :delete, data: { confirm: t('helpers.links.confirm') } %>
+  <%= link_to t('helpers.links.back'), admin_tests_path, class: 'mr-3' %>
+  <%= link_to t('helpers.links.delete'), admin_test_path(@test), class: 'mr-3',
+              method: :delete, data: { confirm: t('helpers.links.confirm') } %>
+</div>
