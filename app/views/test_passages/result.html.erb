@@ -1,20 +1,27 @@
-<%= render template: 'tests/show' %>
-<hr>
+<div class="test-header">
+  <%= render template: 'tests/show' %>
+</div>
 
-<h1><%= t('.completed') %></h1>
+<div class="m-3">
+  <p class="h5 mb-3">
+    <%= t('.completed') %>
+  </p>
 
-<% if @test_passage.success? %>
+  <% if @test_passage.success? %>
 
-  <h3 style="color: green;">
-    <%= t('.success', result: @test_passage.result) %>
-  </h3>
+    <p class="text-success">
+      <%= t('.success', result: @test_passage.result) %>
+    </p>
 
-<% else %>
+  <% else %>
 
-  <h3 style="color: red;">
-    <%= t('.failure', result: @test_passage.result) %>
-  </h3>
+    <p class="text-danger">
+      <%= t('.failure', result: @test_passage.result) %>
+    </p>
 
-<% end %>
+  <% end %>
 
-<%= link_to t('helpers.links.back'), root_path %>
+  <p class="mt-3">
+    <%= link_to t('helpers.links.back'), root_path %>
+  </p>
+</div>

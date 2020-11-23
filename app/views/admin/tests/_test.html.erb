@@ -1,13 +1,11 @@
 <tr>
-  <td class="test first_col"><%= link_to test.title, admin_test_questions_path(test) %></td>
-  <td style="text-align: center"><%= test.questions.count %></td>
-  <td style="text-align: center"><%= test_level(test) %></td>
-  <td nowrap style="padding-left: 10px; padding-right: 10px">
-    <%= link_to t('helpers.links.show'), admin_test_questions_path(test) %>
-    |
-    <%= link_to t('helpers.links.edit'), edit_admin_test_path(test) %>
-    |
-    <%= link_to t('helpers.links.delete'), admin_test_path(test),
+  <td class="text-left"><%= link_to test.title, admin_test_questions_path(test) %></td>
+  <td><%= test.questions.count %></td>
+  <td><%= test_level(test) %></td>
+  <td class="text-left">
+    <%= link_to t('helpers.links.show'), admin_test_questions_path(test), class: 'm-3' %>
+    <%= link_to t('helpers.links.edit'), edit_admin_test_path(test), class: 'm-3' %>
+    <%= link_to t('helpers.links.delete'), admin_test_path(test), class: 'm-3',
                 method: :delete, data: { confirm: t('helpers.links.confirm') } %>
   </td>
 </tr>

@@ -1,7 +1,7 @@
-<table>
-  <tr><td class="test label"><%= t('activerecord.models.test') %>:</td><td><%= @test.title %></td></tr>
-  <tr><td class="test label"><%= t('activerecord.models.category') %>:</td><td><%= @test.category.title %></td></tr>
-  <tr><td class="test label"><%= t('activerecord.attributes.test.level') %>:</td><td><%= test_level(@test) %></td></tr>
-  <tr><td class="test label"><%= t('activerecord.attributes.test.author') %>:</td><td><%= @test.author.name %><%
+<table class="table table-sm table-borderless table-responsive mb-0">
+  <tr><td class="label"><%= t('activerecord.models.test') %>:</td><td><%= @test.title %></td></tr>
+  <tr><td class="label"><%= t('activerecord.models.category') %>:</td><td><%= @test.category.title %></td></tr>
+  <tr><td class="label"><%= t('activerecord.attributes.test.level') %>:</td><td><%= test_level(@test) %></td></tr>
+  <tr><td class="label"><%= t('activerecord.attributes.test.author') %>:</td><td><%= @test.author.name %><%
   %> (<a href="mailto: <%= @test.author.email %>"><%= @test.author.email %></a>)</td></tr>
 </table>

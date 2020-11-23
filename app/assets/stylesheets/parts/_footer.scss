@@ -1,0 +1,6 @@
+div.footer {
+  @extend .fixed-bottom;
+  @extend .bg-light;
+  @extend .p-2;
+  line-height: 1.2;
+}

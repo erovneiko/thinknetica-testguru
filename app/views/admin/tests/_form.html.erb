@@ -13,12 +13,10 @@
 
   <p>
     <%= form.label :level %><br>
-    <%= form.number_field :level, style: 'width: 40px' %>
+    <%= form.number_field :level, class: 'form-level' %>
   </p>
 
-  <div class="actions">
+  <div class="mt-4 mb-4">
     <%= form.submit %>
   </div>
 <% end %>
-
-<br>

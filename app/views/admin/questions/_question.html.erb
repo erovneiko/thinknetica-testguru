@@ -1,4 +1,4 @@
-<li>
+<li class="mb-4">
   <%= question_text(question) %>
 
   <% unless question.text.include?("</pre>") %>
@@ -11,6 +11,4 @@
   |
   <%= link_to t('helpers.links.delete'), admin_question_path(question),
               method: :delete, data: { confirm: t('helpers.links.confirm') } %>
-
-  <br><br>
 </li>

@@ -1,0 +1,8 @@
+ol {
+  @extend .mt-3;
+  padding-inline-start: $spacer * 1.25;
+}
+
+ul {
+  margin-block-start: 0;
+}

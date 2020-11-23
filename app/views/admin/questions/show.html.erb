@@ -1,16 +1,18 @@
-<%= render template: 'tests/show' %>
-<hr>
+<div class="test-header">
+  <%= render template: 'tests/show' %>
+</div>
 
-<p>
-  <%= question_text(@question) %>
-</p>
+<div class="m-3">
+  <p>
+    <%= question_text(@question) %>
+  </p>
 
-<h2><%= t('.answers') %></h2>
+  <h3><%= t('.answers') %></h3>
 
-<ol>
-  <%= render @question.answers %>
-</ol>
+  <ol>
+    <%= render @question.answers %>
+  </ol>
 
-<%= link_to t('helpers.links.back'), admin_test_questions_path(@question.test) %>
-|
-<%= link_to t('helpers.links.new'), new_admin_question_answer_path(@question) %>
+  <%= link_to t('helpers.links.back'), admin_test_questions_path(@question.test), class: 'mr-3' %>
+  <%= link_to t('helpers.links.new'), new_admin_question_answer_path(@question), class: 'mr-3' %>
+</div>

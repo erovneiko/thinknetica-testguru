@@ -1,34 +1,38 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
     <title>TestGuru</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <table width="100%" class="title">
-      <tr>
-        <td>
-          <b class="title">
-            <%= link_to 'TestGuru', root_path %>
-          </b>
-        </td>
-        <% if user_signed_in? %>
-          <td align="right">
-            <%= t('.welcome_header', name: current_user.name) %>
-            &nbsp;|&nbsp;
-            <%= link_to t('.exit'), destroy_user_session_path, method: :delete %>
-          </td>
-        <% end %>
-      </tr>
-    </table>
-    <hr style="margin-bottom: 15px">
-    <%= render 'shared/flash' %>
-    <%= yield %>
-    <%= render 'shared/footer' %>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <%= link_to 'TestGuru', root_path, class: 'navbar-brand' %>
+      <% if user_signed_in? %>
+        <span class="navbar-text m-auto"><%= t('.welcome_header', name: current_user.name) %></span>
+        <div class="navbar-nav">
+          <% if current_user.admin? %>
+            <%= link_to t('.panel'), admin_tests_path, class: 'nav-link' %>
+          <% end %>
+          <%= link_to t('.exit'), destroy_user_session_path, method: :delete, class: 'nav-link' %>
+        </div>
+      <% end %>
+    </nav>
+
+    <div class="container-fluid p-0">
+      <%= render 'shared/flash' %>
+      <%= yield %>
+    </div>
+
+    <div class="footer">
+      <%= render 'shared/footer' %>
+    </div>
   </body>
 </html>

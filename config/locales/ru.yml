@@ -3,9 +3,8 @@ ru:
     application:
       welcome_header: "Привет, Гуру %{name}!"
       welcome_login: "Привет, %{name}!"
+      panel: "Управление"
       exit: "Выход"
-    admin:
-      panel: "Панель Администратора"
 
   activerecord:
     models:
