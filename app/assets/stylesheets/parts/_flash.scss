@@ -1,0 +1,12 @@
+.flash {
+  @extend .alert;
+  @extend .mb-0;
+}
+
+.flash.notice {
+  @extend .alert-info;
+}
+
+.flash.alert {
+  @extend .alert-danger;
+}

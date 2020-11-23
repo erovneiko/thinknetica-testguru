@@ -3,9 +3,8 @@ en:
     application:
       welcome_header: "Welcome, %{name} Guru!"
       welcome_login: "Welcome, %{name}!"
+      panel: "Manage"
       exit: "Exit"
-    admin:
-      panel: "Admin Panel"
 
   activerecord:
     models:
