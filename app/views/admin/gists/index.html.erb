@@ -1,0 +1,22 @@
+<table class="gists table table-striped">
+  <thead>
+    <tr>
+      <th width="15%" class="text-left"><%= t('activerecord.models.question') %></th>
+      <th width="15%">Gist</th>
+      <th width="15%"><%= t('activerecord.models.user') %></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @gists.each do |gist| %>
+      <tr>
+        <td class="text-left"><%= link_to Question.find(gist.question_id).text[0, 25].concat('...'),
+                                          admin_question_path(gist.question_id) %></td>
+        <td><%= link_to gist.id, Octokit::Gist.new(gist.id).url %></td>
+        <td><%= mail_to User.find(gist.user_id).email %></td>
+        <td></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
