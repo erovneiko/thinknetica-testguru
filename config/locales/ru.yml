@@ -55,6 +55,10 @@ ru:
       completed: "Тест завершён!"
       success: "Вы успешно справились с результатом %{result}%"
       failure: "Вы провалились с результатом %{result}%"
+    gist:
+      success: "%{gist_url} успешно создан!"
+      failure: "Ошибка сохранения Gist!"
+      save: "Сохранить в Gist"
 
   tests_mailer:
     completed_test:
@@ -99,3 +103,9 @@ ru:
       header:
         one: "Ошибка"
         other: "Ошибки"
+  common:
+    errors:
+      authorization: "У вас нет прав для просмотра этой страницы"
+
+  gist_question_service:
+    description: "Вопрос из теста \"%{title}\" из TestGuru"

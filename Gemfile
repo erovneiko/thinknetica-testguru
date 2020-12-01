@@ -61,3 +61,6 @@ gem 'devise-i18n'
 
 gem 'bootstrap', '~> 4.5.3'
 gem 'jquery-rails'
+gem 'faraday'
+gem "octokit", "~> 4.0"
+gem 'dotenv-rails', groups: [:development, :test]
