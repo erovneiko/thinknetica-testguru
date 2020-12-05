@@ -31,9 +31,13 @@ function sortRowsByTitle() {
   sortedTable.classList.add('tests')
   sortedTable.classList.add('table')
   sortedTable.classList.add('table-striped')
-  sortedTable.appendChild(rows[0])
+
+  let thead = sortedTable.createTHead()
+  thead.appendChild(rows[0])
+
+  let tbody = sortedTable.createTBody()
   for (let i = 0; i < sortedRows.length; i++)
-    sortedTable.appendChild(sortedRows[i])
+    tbody.appendChild(sortedRows[i])
 
   table.parentNode.replaceChild(sortedTable, table)
 }
