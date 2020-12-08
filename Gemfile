@@ -64,3 +64,4 @@ gem 'jquery-rails'
 gem 'faraday'
 gem "octokit", "~> 4.0"
 gem 'dotenv-rails', groups: [:development, :test]
+gem 'octicons_helper'
