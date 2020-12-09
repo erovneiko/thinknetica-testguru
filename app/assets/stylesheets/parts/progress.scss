@@ -1,0 +1,10 @@
+div.progress-bar {
+  width: 30em;
+  background-color: lightgray;
+
+  div.progress-line {
+    width: 1%;
+    height: 20px;
+    @extend .bg-primary;
+  }
+}
