@@ -70,6 +70,8 @@ ru:
         header: "Новый тест"
       edit:
         header: "Изменить тест"
+      form_inline:
+        submit: "OK"
     questions:
       new:
         header: "Новый вопрос в тесте \"%{title}\""
