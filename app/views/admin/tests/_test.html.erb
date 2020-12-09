@@ -1,14 +1,16 @@
 <tr>
   <td class="text-left">
-    <%= link_to test.title, admin_test_questions_path(test), class: 'test-title', data: { test_id: test.id } %>
+    <%= link_to test.title,
+                edit_admin_test_path(test),
+                class: 'test-title',
+                data: { test_id: test.id } %>
     <%= render 'form_inline', test: test == @test ? @test : test %>
   </td>
   <td><%= test.questions.count %></td>
   <td><%= test_level(test) %></td>
   <td class="text-left">
     <%= link_to t('helpers.links.show'), admin_test_questions_path(test), class: 'm-3' %>
-    <%= link_to t('helpers.links.edit'),
-                edit_admin_test_path(test),
+    <%= link_to t('helpers.links.edit'), '',
                 class: 'form-inline-link m-3',
                 data: { test_id: test.id } %>
     <%= link_to t('helpers.links.delete'), admin_test_path(test), class: 'm-3',
