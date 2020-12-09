@@ -70,6 +70,8 @@ en:
         header: "New Test"
       edit:
         header: "Edit Test"
+      form_inline:
+        submit: "OK"
     questions:
       new:
         header: "New Question in the Test \"%{title}\""

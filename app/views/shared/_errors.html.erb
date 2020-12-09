@@ -1,8 +1,10 @@
-<% if object.errors.present? %>
-  <b><%= t('.header', count: object.errors.count) %>:</b>
-  <ul>
-    <% object.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
-    <% end %>
-  </ul>
+<% if object.present? && object.errors.present? %>
+  <%= content_tag :div, class: 'object-errors m-2', data: { object_id: object.id } do %>
+    <b><%= t('.header', count: object.errors.count) %>:</b>
+    <ul>
+      <% object.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  <% end %>
 <% end %>
