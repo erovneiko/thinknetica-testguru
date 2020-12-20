@@ -27,6 +27,8 @@ function formInlineHandler(testId) {
   let testTitle = document.querySelector('.test-title[data-test-id="' + testId + '"]')
   let formInline = document.querySelector('.form-inline[data-test-id="' + testId + '"]')
 
+  if (!formInline) return
+
   if (formInline.classList.contains('hide')) {
     testTitle.classList.add('hide')
     formInline.classList.remove('hide')

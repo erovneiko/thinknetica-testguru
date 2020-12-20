@@ -5,6 +5,10 @@
 <div class="m-3">
   <h3><%= t('.passing') %></h3>
 
+  <div class="progress-bar" data-total="<%= @total %>">
+    <div class="progress-line" data-index="<%= @index %>"></div>
+  </div>
+
   <p class="mt-3">
     <%= t('.index_of_total', index: @index, total: @total) %>
   </p>
