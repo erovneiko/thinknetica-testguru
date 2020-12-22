@@ -95,6 +95,7 @@ en:
       edit: "Edit"
       delete: "Delete"
       confirm: "Are you sure?"
+      feedback: "Feedback"
     submit:
       create: "Create"
       update: "Update"
@@ -110,3 +111,16 @@ en:
 
   gist_question_service:
     description: "A question about \"%{title}\" from TestGuru"
+
+  feedback:
+    create:
+      blank: "Message couldn't be blank"
+      sent: "Message sent"
+      admin: "Admin address not found"
+    new:
+      text: "Text"
+      send: "Send"
+
+  feedback_mailer:
+    send_mail:
+      subject: "Feedback from TestGuru"

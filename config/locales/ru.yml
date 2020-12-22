@@ -95,6 +95,7 @@ ru:
       edit: "Изменить"
       delete: "Удалить"
       confirm: "Вы уверены?"
+      feedback: "Обратная связь"
     submit:
       create: "Создать"
       update: "Сохранить"
@@ -111,3 +112,16 @@ ru:
 
   gist_question_service:
     description: "Вопрос из теста \"%{title}\" из TestGuru"
+
+  feedback:
+    create:
+      blank: "Сообщение не может быть пустым"
+      sent: "Сообщение отправлено"
+      admin: "Не найден адрес администратора"
+    new:
+      text: "Текст"
+      send: "Отправить"
+
+  feedback_mailer:
+    send_mail:
+      subject: "Сообщение от TestGuru"
