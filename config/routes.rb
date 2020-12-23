@@ -26,6 +26,5 @@ Rails.application.routes.draw do
     resources :gists, only: :index
   end
 
-  post 'feedback', to: 'feedback#create'
-  get 'feedback/new', as: 'new_feedback'
+  resources :feedback, only: %i[new create]
 end
