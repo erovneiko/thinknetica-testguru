@@ -21,6 +21,7 @@ ru:
         level: "Уровень"
         author: "Автор"
         category_id: "Категория"
+        category: "Категория"
       question:
         text: "Текст вопроса"
       answer:
@@ -33,7 +34,11 @@ ru:
     errors:
       messages:
         blank: "не может быть пустым"
-
+      models:
+        test:
+          attributes:
+            category:
+              required: "не может быть пустой"
   tests:
     index:
       num: "Кол"
@@ -51,6 +56,7 @@ ru:
       passing: "Прохождение теста"
       index_of_total: "%{index} из %{total}"
       next: "Следующий"
+      no_questions: "В тесте пока ещё нет вопросов"
     result:
       completed: "Тест завершён!"
       success: "Вы успешно справились с результатом %{result}%"
@@ -95,6 +101,7 @@ ru:
       edit: "Изменить"
       delete: "Удалить"
       confirm: "Вы уверены?"
+      feedback: "Обратная связь"
     submit:
       create: "Создать"
       update: "Сохранить"
@@ -111,3 +118,16 @@ ru:
 
   gist_question_service:
     description: "Вопрос из теста \"%{title}\" из TestGuru"
+
+  feedback:
+    create:
+      blank: "Сообщение не может быть пустым"
+      sent: "Сообщение отправлено"
+      admin: "Не найден адрес администратора"
+    new:
+      text: "Текст"
+      send: "Отправить"
+
+  feedback_mailer:
+    send_mail:
+      subject: "Сообщение от TestGuru"

@@ -21,6 +21,7 @@ en:
         level: "Level"
         author: "Author"
         category_id: "Category"
+        category: "Category"
       question:
         text: "Question"
       answer:
@@ -33,7 +34,11 @@ en:
     errors:
       messages:
         blank: "can't be blank"
-
+      models:
+        test:
+          attributes:
+            category:
+              required: "can't be blank"
   tests:
     index:
       num: "Num"
@@ -51,6 +56,7 @@ en:
       passing: "Passing Test"
       index_of_total: "%{index} of %{total}"
       next: "Next"
+      no_questions: "Test does not include questions yet"
     result:
       completed: "Test completed!"
       success: "You passed with a score of %{result}%"
@@ -95,6 +101,7 @@ en:
       edit: "Edit"
       delete: "Delete"
       confirm: "Are you sure?"
+      feedback: "Feedback"
     submit:
       create: "Create"
       update: "Update"
@@ -110,3 +117,16 @@ en:
 
   gist_question_service:
     description: "A question about \"%{title}\" from TestGuru"
+
+  feedback:
+    create:
+      blank: "Message couldn't be blank"
+      sent: "Message sent"
+      admin: "Admin address not found"
+    new:
+      text: "Text"
+      send: "Send"
+
+  feedback_mailer:
+    send_mail:
+      subject: "Feedback from TestGuru"

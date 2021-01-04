@@ -1,0 +1,16 @@
+<div class="m-3">
+  <h3><%= t('helpers.links.feedback') %></h3>
+
+  <%= form_with url: feedback_index_path do |form| %>
+    <p>
+      <%= form.label :text, t('.text') %><br>
+      <%= form.text_area :text, rows: 5, cols: 60 %>
+    </p>
+
+    <div class="mt-4 mb-4">
+      <%= form.submit t('.send') %>
+    </div>
+  <% end %>
+
+  <%= link_to t('helpers.links.back'), tests_path %>
+</div>

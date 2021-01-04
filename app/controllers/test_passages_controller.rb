@@ -2,6 +2,11 @@ class TestPassagesController < ApplicationController
   before_action :set_test_passage, only: %i[show update result gist]
 
   def show
+    if @test_passage.current_question.nil?
+      redirect_to tests_path, alert: t('.no_questions')
+      return
+    end
+
     @index = @test.questions.index(@test_passage.current_question) + 1
     @total = @test.questions.count
   end

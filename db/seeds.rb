@@ -5,8 +5,20 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
-user1 = User.create(name: "Евгений", email: "erovneiko@mail.ru")
-user2 = User.create(name: "Сергей", email: "sergey@gmail.com")
+user1 = User.new(name: "Евгений",
+                 email: "erovneiko@mail.ru",
+                 password: 'kukuku',
+                 password_confirmation: 'kukuku')
+user1.skip_confirmation!
+user1.type = 'Admin'
+user1.save!
+
+user2 = User.new(name: "Сергей",
+                 email: "erovneiko@yandex.ru",
+                 password: 'kukuku',
+                 password_confirmation: 'kukuku')
+user2.skip_confirmation!
+user2.save!
 
 category = Category.create(title: "Java")
   test     = category.tests.create(title: "Java - Основы", level: 1, author_id: user1.id)

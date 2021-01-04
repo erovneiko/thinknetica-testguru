@@ -3,7 +3,7 @@ div.progress-bar {
   background-color: lightgray;
 
   div.progress-line {
-    width: 1%;
+    width: 0;
     height: 20px;
     @extend .bg-primary;
   }
