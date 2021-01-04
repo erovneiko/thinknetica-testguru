@@ -16,4 +16,8 @@ module TestsHelper
     level = TEST_LEVELS[test.level] || :infernal
     I18n.t('tests.levels.' + level.to_s)
   end
+
+  def test_levels_key(value)
+    TEST_LEVELS.key(value)
+  end
 end

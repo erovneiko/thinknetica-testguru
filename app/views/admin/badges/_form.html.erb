@@ -1,0 +1,25 @@
+<%= form_with(model: [:admin, badge], local: true) do |form| %>
+  <%= render 'shared/errors', object: badge %>
+
+  <p>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+  </p>
+
+  <p>
+    <%= form.label :url %><br>
+    <%= form.text_field :url, size: 40 %>
+  </p>
+
+  <p class="mt-4">
+    <% Badge.award_rules.each.with_index(1) do |v, i| %>
+      <%= form.radio_button 'rule', i %>
+      <%= form.label :rule, v, value: i %>
+      <br>
+    <% end %>
+  </p>
+
+  <div class="mt-3 mb-4">
+    <%= form.submit %>
+  </div>
+<% end %>

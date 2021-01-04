@@ -11,14 +11,13 @@ class TestPassagesController < ApplicationController
     @total = @test.questions.count
   end
 
-  def result
-    @result = @test_passage.correct_questions * 100 / @test.questions.count
-  end
+  def result; end
 
   def update
     @test_passage.accept!(params[:answer_ids])
 
     if @test_passage.completed?
+      current_user.awards << @test_passage.awards
       TestsMailer.completed_test(@test_passage).deliver_now
       redirect_to result_test_passage_path(@test_passage)
     else

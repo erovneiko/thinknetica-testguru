@@ -3,22 +3,21 @@
 </div>
 
 <div class="m-3">
-  <p class="h5 mb-3">
-    <%= t('.completed') %>
-  </p>
+  <h3><%= t('.completed') %></h3>
 
   <% if @test_passage.success? %>
-
     <p class="text-success">
       <%= t('.success', result: @test_passage.result) %>
     </p>
-
   <% else %>
-
     <p class="text-danger">
       <%= t('.failure', result: @test_passage.result) %>
     </p>
+  <% end %>
 
+  <% unless @test_passage.award_badges.empty? %>
+    <h3><%= t('.got_awards', count: @test_passage.award_badges.count) %></h3>
+    <%= render 'shared/awards', awards: @test_passage.award_badges %>
   <% end %>
 
   <p class="mt-3">

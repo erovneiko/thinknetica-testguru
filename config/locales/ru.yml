@@ -31,14 +31,21 @@ ru:
         text: "Текст ответа"
         too_much: "содержит слишком много ответов"
         question: "Вопрос"
+      badge:
+        name: "Название"
+        url: "Адрес изображения"
+        rule: "Условие награждения"
+        rule_1: "За успешное прохождение всех тестов из категории"
+        rule_2: "За успешное прохождение теста с первой попытки"
+        rule_3: "За успешное прохождение всех тестов лёгкого уровня"
+        rule_4: "За успешное прохождение первого трудного теста"
+        rule_5: "За успешное прохождение всех тестов"
     errors:
       messages:
         blank: "не может быть пустым"
-      models:
-        test:
-          attributes:
-            category:
-              required: "не может быть пустой"
+        taken: "уже используется"
+        required: "не может быть пустым"
+        
   tests:
     index:
       num: "Кол"
@@ -61,6 +68,9 @@ ru:
       completed: "Тест завершён!"
       success: "Вы успешно справились с результатом %{result}%"
       failure: "Вы провалились с результатом %{result}%"
+      got_awards:
+        one: "Вы заработали награду!"
+        other: "Вы заработали награды!"
     gist:
       success: "%{gist_url} успешно создан!"
       failure: "Ошибка сохранения Gist!"
@@ -92,6 +102,17 @@ ru:
         header: "Новый ответ"
       edit:
         header: "Изменить ответ"
+    badges:
+      create:
+        created: "Бейдж успешно создан"
+      update:
+        updated: "Бейдж успешно изменён"
+      destroy:
+        destroyed: "Бейдж успешно удалён"
+      new:
+        new: "Новый Бейдж"
+      edit:
+        update: "Изменить Бейдж"
 
   helpers:
     links:
@@ -112,6 +133,12 @@ ru:
       header:
         one: "Ошибка"
         other: "Ошибки"
+    header:
+      tests: "Тесты"
+      awards: "Награды"
+      control: "Управление"
+      badges: "Бейджи"
+      gists: "Гисты"
   common:
     errors:
       authorization: "У вас нет прав для просмотра этой страницы"
@@ -131,3 +158,9 @@ ru:
   feedback_mailer:
     send_mail:
       subject: "Сообщение от TestGuru"
+
+  awards:
+    index:
+      your_awards: "Ваши награды"
+      existing_awards: "Существующие награды"
+      still_no_awards: "У вас пока ещё нет наград"

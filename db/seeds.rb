@@ -38,8 +38,6 @@ category = Category.create(title: "Java")
       question.answers.create(text: "Добавить модификатор private")
       question.answers.create(text: "Запретить наследование нельзя")
 
-user1.tests << test
-
 category = Category.create(title: "Python")
   test     = category.tests.create(title: "Python - Основы", level: 1, author_id: user1.id)
     question = test.questions.create(text: "Что напечатает код?<pre>def func(n)\\nn = n + 1\\nprint(func(0))</pre>")
@@ -58,9 +56,6 @@ category = Category.create(title: "Python")
       question.answers.create(text: "xrange()")
       question.answers.create(text: "range()", correct: true)
       question.answers.create(text: "ord()")
-
-user1.tests << test
-user2.tests << test
 
 category = Category.create(title: "CSS")
   test     = category.tests.create(title: "CSS - Основы", level: 0, author_id: user1.id)
@@ -81,9 +76,6 @@ category = Category.create(title: "CSS")
       question.answers.create(text: "0-50")
       question.answers.create(text: "0-10")
       question.answers.create(text: "0-1")
-
-user1.tests << test
-user2.tests << test
 
 category = Category.create(title: "SQL")
   test     = category.tests.create(title: "SQL - Основы", level: 2, author_id: user1.id)
@@ -106,4 +98,8 @@ category = Category.create(title: "SQL")
       # question.answers.create(text: "CREATE animals AS DATABASE;")
       question.answers.create(text: "CREATE DATABASE animals;", correct: true)
 
-user2.tests << test
+Badge.create(name: "Лидер",      url: "badge_01.png", rule: 1)
+Badge.create(name: "Чемпион",    url: "badge_02.png", rule: 2)
+Badge.create(name: "Претендент", url: "badge_03.png", rule: 3)
+Badge.create(name: "Гений",      url: "badge_04.png", rule: 4)
+Badge.create(name: "Победитель", url: "badge_05.png", rule: 5)

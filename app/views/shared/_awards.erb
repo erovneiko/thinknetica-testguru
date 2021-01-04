@@ -1,0 +1,35 @@
+<table class="awards">
+  <tr>
+    <% awards.each_with_index do |badge, i| %>
+      <% unless i.zero? %>
+        <td><div class="separator"></div></td>
+      <% end %>
+      <td class="image">
+        <%= image_tag badge.url, skip_pipeline: true %>
+      </td>
+    <% end %>
+    <td class="free_space"></td>
+  </tr>
+  <tr>
+    <% awards.each_with_index do |badge, i| %>
+      <% unless i.zero? %>
+        <td></td>
+      <% end %>
+      <td class="name">
+        <%= badge.name %>
+      </td>
+    <% end %>
+    <td></td>
+  </tr>
+  <tr>
+    <% awards.each_with_index do |badge, i| %>
+      <% unless i.zero? %>
+        <td></td>
+      <% end %>
+      <td class="rule">
+        <%= Badge.award_rules[badge.rule - 1] %>
+      </td>
+    <% end %>
+    <td></td>
+  </tr>
+</table>
