@@ -22,55 +22,57 @@ class AwardsService
   # 4. За успешное прохождение первого трудного теста
   # 5. За успешное прохождение всех тестов
 
-  # Награда выдаётся только один раз за категорию
-  # Количество успешных тестов должно равняться общему количеству тестов в категории
   def award_rule_1?
     category = @test_passage.test.category
 
-    @test_passage.user.awards.rule(1)
-                 .joins(test_passage: :test)
-                 .where(tests: { category_id: category })
-                 .empty? &&
-      Test.joins(:test_passages)
-          .where(category: category, test_passages: { success: true })
-          .distinct
-          .count ==
-        Test.where(category: category)
-            .count
+    no_awards_in_category = @test_passage.user.awards.rule(1)
+                                         .joins(test_passage: :test)
+                                         .where(tests: { category_id: category })
+                                         .empty?
+
+    success_num_in_category = Test.joins(:test_passages)
+                                  .where(category: category, test_passages: { success: true })
+                                  .distinct
+                                  .count
+
+    total_tests_in_category = Test.where(category: category)
+                                  .count
+
+    no_awards_in_category && success_num_in_category == total_tests_in_category
   end
 
-  # Других прохождений, кроме этого быть не должно
   def award_rule_2?
+    # Других прохождений, кроме этого быть не должно
     @test_passage.test.test_passages
                  .where.not(id: @test_passage.id)
                  .empty?
   end
 
-  # Завершённый тест должен быть лёгким
-  # Количество успешных лёгких тестов должно равняться общему количеству лёгких тестов
   def award_rule_3?
+    success_num_easy = Test.joins(:test_passages)
+                           .where(level: Test::LEVELS[:easy], test_passages: { success: true })
+                           .distinct.count
+
+    total_num_easy = Test.where(level: Test::LEVELS[:easy])
+                         .count
+
     @test_passage.test.level == Test::LEVELS[:easy] &&
-      Test.joins(:test_passages)
-          .where(level: Test::LEVELS[:easy], test_passages: { success: true })
-          .distinct.count ==
-        Test.where(level: Test::LEVELS[:easy])
-            .count
+      success_num_easy == total_num_easy
   end
 
-  # Завершённый тест должен быть трудный
-  # Награда выдаётся только один раз
   def award_rule_4?
-    @test_passage.test.level == Test::LEVELS[:advanced] &&
-      @test_passage.user.awards.rule(4).empty?
+    no_awards_rule_4 = @test_passage.user.awards.rule(4).empty?
+
+    @test_passage.test.level == Test::LEVELS[:advanced] && no_awards_rule_4
   end
 
-  # Награда выдаётся только один раз
-  # Количество успешных тестов должно равняться общему количеству тестов
   def award_rule_5?
-    @test_passage.user.awards.rule(5).empty? &&
-      Test.joins(:test_passages)
-          .where(test_passages: { success: true })
-          .distinct.count ==
-        Test.count
+    no_awards_rule_5 = @test_passage.user.awards.rule(5).empty?
+
+    success_tests = Test.joins(:test_passages)
+                        .where(test_passages: { success: true })
+                        .distinct.count
+
+    no_awards_rule_5 && success_tests == Test.count
   end
 end
