@@ -1,0 +1,15 @@
+<table class="tests table table-striped">
+  <% @badges.each do |badge| %>
+    <tr>
+      <td><%= link_to image_tag(badge.url, skip_pipeline: true), edit_admin_badge_path(badge) %></td>
+      <td><%= link_to badge.name, edit_admin_badge_path(badge) %></td>
+      <td>
+        <%= link_to octicon('x-circle', height: 24, class: 'text-danger'), [:admin, badge],
+                    method: :delete, data: { confirm: t('helpers.links.confirm') } %>
+      </td>
+      <td width="100%"></td>
+    </tr>
+  <% end %>
+</table>
+
+<%= link_to t('helpers.links.new'), new_admin_badge_path, class: 'btn btn-primary ml-3' %>

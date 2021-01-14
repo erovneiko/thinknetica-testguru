@@ -1,4 +1,6 @@
 class Test < ApplicationRecord
+  LEVELS = { easy: 0, normal: 1, advanced: 2, hard: 3 }.freeze
+
   has_many :test_passages, dependent: :destroy
   has_many :users, through: :test_passages
   has_many :questions, dependent: :destroy

@@ -3,10 +3,11 @@ class TestPassage < ApplicationRecord
   belongs_to :test
   belongs_to :current_question, class_name: 'Question', optional: true
 
+  has_many :awards
+  has_many :award_badges, through: :awards, source: :badge
+
   before_validation :before_validation_set_first_question, on: :create
   before_update :before_update_set_next_question
-
-  attr_reader :result
 
   SUCCESS_PERCENTAGE = 85
 
@@ -19,8 +20,12 @@ class TestPassage < ApplicationRecord
     save!
   end
 
+  def result
+    correct_questions * 100 / test.questions.count
+  end
+
   def success?
-    (@result = correct_questions * 100 / test.questions.count) >= SUCCESS_PERCENTAGE
+    success
   end
 
   private
@@ -31,6 +36,7 @@ class TestPassage < ApplicationRecord
 
   def before_update_set_next_question
     self.current_question = next_question
+    self.success = (result >= SUCCESS_PERCENTAGE) if completed?
   end
 
   def correct_answer?(answer_ids)

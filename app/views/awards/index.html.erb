@@ -1,0 +1,14 @@
+<div class="m-3">
+  <h3><%= t('.your_awards') %></h3>
+
+  <% if current_user.award_badges.empty? %>
+    <p><%= t('.still_no_awards') %></p>
+  <% else %>
+    <%= render 'shared/awards', awards: current_user.award_badges %>
+    <br>
+  <% end %>
+
+  <h3><%= t('.existing_awards') %></h3>
+
+  <%= render 'shared/awards', awards: Badge.all %>
+</div>

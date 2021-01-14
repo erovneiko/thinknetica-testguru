@@ -31,14 +31,20 @@ en:
         text: "Answer"
         too_much: "has too much answers"
         question: "Question"
+      badge:
+        name: "Name"
+        url: "Image URL"
+        rule: "Rewarding Rule"
+        rule_1: "For successful passing all tests within category"
+        rule_2: "For successful passing test by first try"
+        rule_3: "For successful passing all easy tests"
+        rule_4: "For successful passing first advanced test"
+        rule_5: "For successful passing all tests"
     errors:
       messages:
         blank: "can't be blank"
-      models:
-        test:
-          attributes:
-            category:
-              required: "can't be blank"
+        taken: "already used"
+        required: "can't be blank"
   tests:
     index:
       num: "Num"
@@ -61,6 +67,9 @@ en:
       completed: "Test completed!"
       success: "You passed with a score of %{result}%"
       failure: "You failed with a score of %{result}%"
+      got_awards:
+        one: "You have award!"
+        other: "You have awards!"
     gist:
       success: "%{gist_url} was successfully created!"
       failure: "An error occurred while saving gist!"
@@ -92,6 +101,17 @@ en:
         header: "New Answer"
       edit:
         header: "Edit Answer"
+    badges:
+      create:
+        created: "Badge was successfully created"
+      update:
+        updated: "Badge was successfully updated"
+      destroy:
+        destroyed: "Badge was successfully destroyed"
+      new:
+        new: "New Badge"
+      edit:
+        update: "Edit Badge"
 
   helpers:
     links:
@@ -111,6 +131,12 @@ en:
       header:
         one: "Error"
         other: "Errors"
+    header:
+      tests: "Tests"
+      awards: "Awards"
+      control: "Control"
+      badges: "Badges"
+      gists: "Gists"
   common:
     errors:
       authorization: "You are not authorized to view this page"
@@ -130,3 +156,9 @@ en:
   feedback_mailer:
     send_mail:
       subject: "Feedback from TestGuru"
+
+  awards:
+    index:
+      your_awards: "Your Awards"
+      existing_awards: "Existing Awards"
+      still_no_awards: "You still don't have awards"
