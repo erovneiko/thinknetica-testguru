@@ -6,7 +6,12 @@ class TestsController < ApplicationController
   end
 
   def start
-    current_user.tests.push(@test)
+    if @test.questions.none?
+      redirect_to tests_path, alert: t('.no_questions')
+      return
+    end
+
+    current_user.tests << @test
     redirect_to current_user.test_passage(@test)
   end
 

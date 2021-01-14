@@ -21,7 +21,7 @@ user2.skip_confirmation!
 user2.save!
 
 category = Category.create(title: "Java")
-  test     = category.tests.create(title: "Java - Основы", level: 1, author_id: user1.id)
+  test     = category.tests.create(title: "Java - Основы", level: 1, author_id: user1.id, timer: 10)
     question = test.questions.create(text: "Какие пакеты автоматически импортируются во все Java-программы?")
       question.answers.create(text: "java.util")
       question.answers.create(text: "java.lang")

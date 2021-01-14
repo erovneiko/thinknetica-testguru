@@ -3,8 +3,16 @@ class TestPassagesController < ApplicationController
 
   def show
     if @test_passage.current_question.nil?
-      redirect_to tests_path, alert: t('.no_questions')
+      redirect_to result_test_passage_path(@test_passage)
       return
+    end
+
+    if @test.timer.positive?
+      @timer_seconds = (@test_passage.created_at + @test.timer * 60 - Time.now).to_i
+      if @timer_seconds <= 0
+        redirect_to result_test_passage_path(@test_passage)
+        return
+      end
     end
 
     @index = @test.questions.index(@test_passage.current_question) + 1

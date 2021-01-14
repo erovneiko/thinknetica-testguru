@@ -9,11 +9,14 @@
     <div class="progress-line" data-index="<%= @index - 1 %>"></div>
   </div>
 
-  <p class="mt-3">
-    <%= t('.index_of_total', index: @index, total: @total) %>
-  </p>
+  <table class="timer">
+    <tr>
+      <td><%= t('.index_of_total', index: @index, total: @total) %></td>
+      <td><%= tag.span id: 'timer', data: { timer: @timer_seconds } if @timer_seconds %></td>
+    </tr>
+  </table>
 
-  <p>
+  <p class="mt-3">
     <%= question_text(@test_passage.current_question) %>
   </p>
 

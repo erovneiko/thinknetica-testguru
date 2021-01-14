@@ -22,6 +22,7 @@ ru:
         author: "Автор"
         category_id: "Категория"
         category: "Категория"
+        timer: "Таймер (минуты)"
       question:
         text: "Текст вопроса"
       answer:
@@ -45,7 +46,7 @@ ru:
         blank: "не может быть пустым"
         taken: "уже используется"
         required: "не может быть пустым"
-        
+
   tests:
     index:
       num: "Кол"
@@ -57,13 +58,14 @@ ru:
       infernal: "запредельный"
     test:
       start: "Старт"
+    start:
+      no_questions: "В тесте пока ещё нет вопросов"
 
   test_passages:
     show:
       passing: "Прохождение теста"
       index_of_total: "%{index} из %{total}"
       next: "Следующий"
-      no_questions: "В тесте пока ещё нет вопросов"
     result:
       completed: "Тест завершён!"
       success: "Вы успешно справились с результатом %{result}%"
