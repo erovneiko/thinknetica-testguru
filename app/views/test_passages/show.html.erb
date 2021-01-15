@@ -12,7 +12,7 @@
   <table class="timer">
     <tr>
       <td><%= t('.index_of_total', index: @index, total: @total) %></td>
-      <td><%= tag.span id: 'timer', data: { timer: @timer_seconds } if @timer_seconds %></td>
+      <td><%= tag.span id: 'timer', data: { timer: @test_passage.timer } if @test_passage.timer.positive? %></td>
     </tr>
   </table>
 

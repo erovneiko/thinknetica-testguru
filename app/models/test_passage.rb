@@ -11,6 +11,8 @@ class TestPassage < ApplicationRecord
 
   SUCCESS_PERCENTAGE = 85
 
+  attr_reader :timer
+
   def completed?
     current_question.nil?
   end
@@ -26,6 +28,11 @@ class TestPassage < ApplicationRecord
 
   def success?
     success
+  end
+
+  def expired?
+    @timer = (created_at + test.timer * 60 - Time.now).to_i
+    test.timer.positive? && !@timer.positive?
   end
 
   private

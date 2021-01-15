@@ -2,17 +2,9 @@ class TestPassagesController < ApplicationController
   before_action :set_test_passage, only: %i[show update result gist]
 
   def show
-    if @test_passage.current_question.nil?
+    if @test_passage.completed? || @test_passage.expired?
       redirect_to result_test_passage_path(@test_passage)
       return
-    end
-
-    if @test.timer.positive?
-      @timer_seconds = (@test_passage.created_at + @test.timer * 60 - Time.now).to_i
-      if @timer_seconds <= 0
-        redirect_to result_test_passage_path(@test_passage)
-        return
-      end
     end
 
     @index = @test.questions.index(@test_passage.current_question) + 1
