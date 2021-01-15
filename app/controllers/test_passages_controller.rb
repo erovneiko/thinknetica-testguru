@@ -2,8 +2,8 @@ class TestPassagesController < ApplicationController
   before_action :set_test_passage, only: %i[show update result gist]
 
   def show
-    if @test_passage.current_question.nil?
-      redirect_to tests_path, alert: t('.no_questions')
+    if @test_passage.completed? || @test_passage.expired?
+      redirect_to result_test_passage_path(@test_passage)
       return
     end
 

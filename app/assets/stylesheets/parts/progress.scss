@@ -8,3 +8,11 @@ div.progress-bar {
     @extend .bg-primary;
   }
 }
+
+table.timer {
+  width: 30em;
+  @extend .mt-3;
+  td + td {
+    text-align: right;
+  }
+}

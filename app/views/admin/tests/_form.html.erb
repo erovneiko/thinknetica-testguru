@@ -16,6 +16,11 @@
     <%= form.number_field :level, class: 'form-level' %>
   </p>
 
+  <p>
+    <%= form.label :timer %><br>
+    <%= form.number_field :timer, min: 0, class: 'form-timer' %>
+  </p>
+
   <div class="mt-4 mb-4">
     <%= form.submit %>
   </div>

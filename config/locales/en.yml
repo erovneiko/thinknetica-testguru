@@ -22,6 +22,7 @@ en:
         author: "Author"
         category_id: "Category"
         category: "Category"
+        timer: "Timer (minutes)"
       question:
         text: "Question"
       answer:
@@ -45,6 +46,7 @@ en:
         blank: "can't be blank"
         taken: "already used"
         required: "can't be blank"
+
   tests:
     index:
       num: "Num"
@@ -56,13 +58,14 @@ en:
       infernal: "infernal"
     test:
       start: "Start"
+    start:
+      no_questions: "Test does not include questions yet"
 
   test_passages:
     show:
       passing: "Passing Test"
       index_of_total: "%{index} of %{total}"
       next: "Next"
-      no_questions: "Test does not include questions yet"
     result:
       completed: "Test completed!"
       success: "You passed with a score of %{result}%"
